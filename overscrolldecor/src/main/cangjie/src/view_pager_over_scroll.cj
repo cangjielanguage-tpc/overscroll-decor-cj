@@ -25,25 +25,24 @@ public class ViewPagerOverScroll {
     }
 }
 
-@Observed
 public class ViewPagerOverScrollModel {
-    var mHeight: Option<Length> = px2vp(Length(2340))
-    var mWidth: Option<Length> = px2vp(lpx2px(Length(720)).getOrThrow())
+    var mHeight: Length = 2340.vp
+    var mWidth: Length = 720.vp
 
-    public func getHeight(): Option<Length> {
+    public func getHeight(): Length {
         return this.mHeight
     }
 
-    public func setHeight(height: Option<Length>): ViewPagerOverScrollModel {
+    public func setHeight(height: Length): ViewPagerOverScrollModel {
         this.mHeight = height
         return this
     }
 
-    public func getWidth(): Option<Length> {
+    public func getWidth(): Length {
         return this.mWidth
     }
 
-    public func setWidth(width: Option<Length>): ViewPagerOverScrollModel {
+    public func setWidth(width: Length): ViewPagerOverScrollModel {
         this.mWidth = width
         return this
     }
