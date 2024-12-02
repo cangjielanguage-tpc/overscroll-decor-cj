@@ -1,0 +1,117 @@
+/*
+ * @Copyright (c) Huawei Technologies Co., Ltd. 2024-2024. All rights reserved.
+ */
+
+package ohos_app_cangjie_entry
+
+import ohos.base.*
+import ohos.component.*
+import ohos.state_manage.*
+import ohos.state_macro_manage.*
+import ohos.prompt_action.PromptAction
+import std.sync.{Timer, sleep}
+import std.time.{Duration, MonoTime}
+import overscrolldecor.*
+
+@Entry
+@Component
+public class ViewPagerDemo {
+    private var color: Array<UInt32> = [0Xffaa66cc, 0Xff0099cc, 0Xff33b5e5, 0X00e0e0, 0Xff669900, 0Xff99cc00, 0Xf0e000,
+        0Xffffbb33, 0Xffff8800, 0Xffff4444, 0Xffcc0000]
+    private var colorName: Array<String> = ["PURPLE", "BLUE", "LIGHT BLUE", "CYAN", "GREEN", "LIGHT GREEN", "YELLOW",
+        "LIGHT ORANGE", "ORANGE", "LIGHT RED", "RED"]
+    @State
+    var model: ViewPagerOverScrollModel = ViewPagerOverScrollModel()
+    @State
+    var isVisibility: Visibility = Visibility.None
+    @State
+    var backOffset: Float64 = 0.0
+    private var controller: TabsController = TabsController()
+    private var itemIndex: Int64 = 0
+
+    protected override func aboutToAppear(): Unit {
+        this.model.setWidth(100.percent).setHeight(92.percent)
+    }
+
+    @Builder
+    func SquareText(index: Int64) {
+        Flex(FlexParams(direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center)
+        ) {
+            Text(this.colorName[index]).fontSize(28).textAlign(TextAlign.Center)
+        }.height(100.percent).width(100.percent).backgroundColor(this.color[index])
+    }
+
+    @Builder
+    func specificChild() {
+        Tabs(this.controller) {
+            TabContent() {
+                this.SquareText(0)
+            }
+            TabContent() {
+                this.SquareText(1)
+            }
+            TabContent() {
+                this.SquareText(2)
+            }
+            TabContent() {
+                this.SquareText(3)
+            }
+            TabContent() {
+                this.SquareText(4)
+            }
+            TabContent() {
+                this.SquareText(5)
+            }
+            TabContent() {
+                this.SquareText(6)
+            }
+            TabContent() {
+                this.SquareText(7)
+            }
+            TabContent() {
+                this.SquareText(8)
+            }
+            TabContent() {
+                this.SquareText(9)
+            }
+            TabContent() {
+                this.SquareText(10)
+            }
+        }.height(100.percent).width(100.percent).barWidth(0).barHeight(0).padding(16)
+    }
+
+    func build() {
+        Stack(Alignment.TopStart) {
+            Flex(
+                FlexParams(direction: FlexDirection.Column, alignItems: ItemAlign.Center,
+                justifyContent: FlexAlign.Center)) {
+                Row() {
+                    Image(@r(app.media.ic_more)).objectFit(ImageFit.Contain).width(10.percent).height(65.percent).margin(
+                        left: 16, right: 20).onClick({
+                        evt =>
+                        this.isVisibility = Visibility.Visible
+                    })
+                    Text("ViewPager Over-Scroll Demo").fontSize(38).maxLines(1).fontColor(Color.WHITE).textOverflow(
+                        TextOverflow.Ellipsis).width(80.percent)
+                }.width(100.percent).height(8.percent).backgroundColor(0Xffffbb33)
+
+                ViewPagerOverScroll(model: this.model, child: this.specificChild)
+            }
+
+            Stack(Alignment.TopStart) {
+                Flex() {
+
+                }.width(100.percent).height(100.percent).backgroundColor(Color.BLACK).opacity(0.5 + this.backOffset * 0.3
+                ).onClick({
+                        evt =>
+
+                        this.isVisibility = Visibility.Visible
+                })
+
+                Flex() {
+                    SideBar()
+                }.offset(x: this.backOffset * 500.0, y: 0.0)
+            }.width(100.percent).height(100.percent).visibility(this.isVisibility)
+        }
+    }
+}
