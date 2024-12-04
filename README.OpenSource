@@ -1,0 +1,11 @@
+[
+    {
+        "Name": "overscroll-decor",
+        "License": "BSD-2-Clause License",
+        "License File": " LICENSE ",
+        "Version Number": "1.1.1",
+        "Owner" : "EverythingMe"
+        "Upstream URL": "https://github.com/EverythingMe/overscroll-decor",
+        "Description": "Android: iOS-like over-scrolling effect applicable over almost all scrollable Android views."
+    }
+]
