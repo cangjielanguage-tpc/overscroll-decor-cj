@@ -72,6 +72,10 @@ public class OverScrollDecor {
                             case TouchType.Up => this.isBounceEffect = false
                             case _ => return
                         }
+                    }).onAppear({ =>
+                        let offsetY = this.model.getOffsetY()
+                        this.scroller.scrollTo(xOffset: 0.0, yOffset: offsetY)
+                        this.model.setOffsetY(offsetY)
                     })
                 }.height(this.model.mHeight).width(this.model.mWidth)
             } else if (this.model.mOrientation == ORIENTATION.HORIZONTAL) {
@@ -126,6 +130,11 @@ public class OverScrollDecor {
                             case TouchType.Up => this.isBounceEffect = false
                             case _ => return
                         }
+                    }).onAppear({ =>
+                        let offsetX = this.model.getOffsetX()
+                        this.scroller.scrollTo(xOffset: offsetX, yOffset: 0.0)
+                        this.model.setOffsetX(offsetX)
+
                     })
                 }.height(this.model.mHeight).width(this.model.mWidth)
              }

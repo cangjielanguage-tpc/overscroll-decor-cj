@@ -158,44 +158,29 @@ public class OverScrollDecorModel {
      * 参数 textColor - 颜色
      * 返回值 OverScrollDecorModel - 滚动容器数据实例
      */
-    public func setTextColor(textColor: String): OverScrollDecorModel 
-
-    public func getClearColor(): String 
-
-    public func setClearColor(clearColor: String): OverScrollDecorModel 
-
-    public func getDragColorLeft(): String 
-
-    public func setDragColorLeft(dragColorLeft: String): OverScrollDecorModel 
-
-    public func getBounceBackColorLeft(): String 
-
-    public func setBounceBackColorLeft(bounceBackColorLeft: String): OverScrollDecorModel 
-
-    public func getDragColorRight(): String 
-
-    public func setDragColorRight(dragColorRight: String): OverScrollDecorModel 
-
-    public func getBounceBackColorRight(): String 
-
-    public func setBounceBackColorRight(bounceBackColorRight: String): OverScrollDecorModel
-
-    public func getDragColorTop(): String 
-
-    public func setDragColorTop(dragColorTop: String): OverScrollDecorModel 
-
-    public func getBounceBackColorTop(): String 
-
-    public func setBounceBackColorTop(bounceBackColorTop: String): OverScrollDecorModel 
-
-    public func getDragColorBottom(): String 
-
-    public func setDragColorBottom(dragColorBottom: String): OverScrollDecorModel 
-
-    public func getBounceBackColorBottom(): String 
-
-    public func setBounceBackColorBottom(bounceBackColorBottom: String): OverScrollDecorModel 
+    public func setTextColor(textColor: String): OverScrollDecorModel
 }
+
+
+public enum ORIENTATION {
+    | VERTICAL //垂直方向滚动
+    | HORIZONTAL //水平方向滚动
+
+    /*
+     * 判等
+     *
+     * 参数 that - 要对比的对象
+     * 返回值 Bool - 是否相等
+     */
+    public operator func ==(that: ORIENTATION): Bool
+
+    /*
+     * 判不等
+     *
+     * 参数 that - 要对比的对象
+     * 返回值 Bool - 是否不等
+     */
+    public operator func !=(that: ORIENTATION): Bool
 ```
 
 ### 1.2 OverScrollDecor Component API Description
