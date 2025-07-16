@@ -10,6 +10,7 @@ import ohos.state_manage.*
 import ohos.state_macro_manage.*
 import ohos.prompt_action.PromptAction
 import overscrolldecor.*
+import ohos.resource_manager.__GenerateResource__
 
 @Entry
 @Component

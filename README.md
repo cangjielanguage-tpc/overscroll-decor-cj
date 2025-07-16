@@ -3,9 +3,9 @@
 </div>
 
 <p align="center">
-<img alt="" src="https://img.shields.io/badge/release-v0.0.1-brightgreen" style="display: inline-block;" />
+<img alt="" src="https://img.shields.io/badge/release-v1.0.1-brightgreen" style="display: inline-block;" />
 <img alt="" src="https://img.shields.io/badge/build-pass-brightgreen" style="display: inline-block;" />
-<img alt="" src="https://img.shields.io/badge/cjc-v0.53.18-brightgreen" style="display: inline-block;" />
+<img alt="" src="https://img.shields.io/badge/cjc-v1.0.0-brightgreen" style="display: inline-block;" />
 <img alt="" src="https://img.shields.io/badge/cjcov-NA-brightgreen" style="display: inline-block;" />
 <img alt="" src="https://img.shields.io/badge/project-open-brightgreen" style="display: inline-block;" />
 </p>
@@ -73,7 +73,7 @@
        ```
 
 ## 功能示例
-详见 [entry](entry/src/main/cangjie/src/index.cj)
+详见 [entry](entry/src/main/cangjie/index.cj)
 
 ```cangjie
     // 实例化OverScrollDecor.Model 对象 
@@ -148,8 +148,7 @@
 ## 约束与限制
 在下述版本验证通过：
 
-    DevEco Studio: 5.0.2 Release
-    Cangjie support Plugin: 5.0.7.100
+    Cangjie Version: 1.0.0
 
 ## 开源协议
 本项目基于 [Apache License 2.0](./LICENSE) ，请自由地享受和参与开源。

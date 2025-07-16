@@ -9,9 +9,10 @@ import ohos.component.*
 import ohos.state_manage.*
 import ohos.state_macro_manage.*
 import ohos.prompt_action.PromptAction
-import std.sync.{Timer, sleep}
-import std.time.{Duration, MonoTime}
+import std.sync.*
+import std.time.*
 import overscrolldecor.*
+import ohos.resource_manager.__GenerateResource__
 
 @Entry
 @Component

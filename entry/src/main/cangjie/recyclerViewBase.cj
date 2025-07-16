@@ -12,9 +12,10 @@ import ohos.prompt_action.PromptAction
 import ohos.router.Router
 import std.convert.Parsable
 import std.math.floor
-import std.sync.{Timer, sleep}
-import std.time.{Duration, MonoTime}
+import std.sync.*
+import std.time.*
 import overscrolldecor.*
+import ohos.resource_manager.__GenerateResource__
 
 @Component
 public class BaseView {

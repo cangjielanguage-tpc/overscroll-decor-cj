@@ -9,6 +9,7 @@ import ohos.component.*
 import ohos.state_manage.*
 import ohos.state_macro_manage.*
 import ohos.router.*
+import ohos.resource_manager.__GenerateResource__
 
 @Component
 class SideBar {

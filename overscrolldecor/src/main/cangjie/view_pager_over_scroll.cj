@@ -5,7 +5,6 @@
 package overscrolldecor
 
 internal import ohos.base.nativeLog
-internal import cj_res_overscrolldecor.app
 internal import ohos.base.*
 internal import ohos.component.*
 internal import ohos.state_manage.*
