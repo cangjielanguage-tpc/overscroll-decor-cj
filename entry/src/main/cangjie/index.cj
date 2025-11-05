@@ -51,6 +51,127 @@ public class EntryView {
                         .margin(5)
                         .fontSize(13)
                         .onClick {Router.push(url: "InitTest")}
+
+                    Button("ViewPagerDemo Test").id("ViewPagerDemo")
+                        .height(40)
+                        .width(80.percent)
+                        .shape(ShapeType.Capsule)
+                        .fontColor(0xFFFFFF)
+                        .padding(5)
+                        .align(Alignment.Center)
+                        .margin(5)
+                        .fontSize(13)
+                        .onClick {Router.push(url: "ViewPagerDemo")}
+
+                    Button("GridViewDemo Test").id("GridViewDemo")
+                        .height(40)
+                        .width(80.percent)
+                        .shape(ShapeType.Capsule)
+                        .fontColor(0xFFFFFF)
+                        .padding(5)
+                        .align(Alignment.Center)
+                        .margin(5)
+                        .fontSize(13)
+                        .onClick {Router.push(url: "GridViewDemo")}
+
+                    Button("ListViewDemo Test").id("ListViewDemo")
+                        .height(40)
+                        .width(80.percent)
+                        .shape(ShapeType.Capsule)
+                        .fontColor(0xFFFFFF)
+                        .padding(5)
+                        .align(Alignment.Center)
+                        .margin(5)
+                        .fontSize(13)
+                        .onClick {Router.push(url: "ListViewDemo")}
+
+                    Button("MiscViewsDemo Test").id("MiscViewsDemo")
+                        .height(40)
+                        .width(80.percent)
+                        .shape(ShapeType.Capsule)
+                        .fontColor(0xFFFFFF)
+                        .padding(5)
+                        .align(Alignment.Center)
+                        .margin(5)
+                        .fontSize(13)
+                        .onClick {Router.push(url: "MiscViewsDemo")}
+
+                    Button("NestedScrollViewDemo Test").id("NestedScrollViewDemo")
+                        .height(40)
+                        .width(80.percent)
+                        .shape(ShapeType.Capsule)
+                        .fontColor(0xFFFFFF)
+                        .padding(5)
+                        .align(Alignment.Center)
+                        .margin(5)
+                        .fontSize(13)
+                        .onClick {Router.push(url: "NestedScrollViewDemo")}
+
+                    Button("RecyclerViewAttachDemo Test").id("RecyclerViewAttachDemo")
+                        .height(40)
+                        .width(80.percent)
+                        .shape(ShapeType.Capsule)
+                        .fontColor(0xFFFFFF)
+                        .padding(5)
+                        .align(Alignment.Center)
+                        .margin(5)
+                        .fontSize(13)
+                        .onClick {Router.push(url: "RecyclerViewAttachDemo")}
+
+                    Button("RecyclerViewDetachDemo Test").id("RecyclerViewDetachDemo")
+                        .height(40)
+                        .width(80.percent)
+                        .shape(ShapeType.Capsule)
+                        .fontColor(0xFFFFFF)
+                        .padding(5)
+                        .align(Alignment.Center)
+                        .margin(5)
+                        .fontSize(13)
+                        .onClick {Router.push(url: "RecyclerViewDetachDemo")}
+
+                     Button("RecyclerViewStaggeredGridDemo Test").id("RecyclerViewStaggeredGridDemo")
+                        .height(40)
+                        .width(80.percent)
+                        .shape(ShapeType.Capsule)
+                        .fontColor(0xFFFFFF)
+                        .padding(5)
+                        .align(Alignment.Center)
+                        .margin(5)
+                        .fontSize(13)
+                        .onClick {Router.push(url: "RecyclerViewStaggeredGridDemo")}
+
+                     Button("ScrollViewDemo Test").id("ScrollViewDemo")
+                        .height(40)
+                        .width(80.percent)
+                        .shape(ShapeType.Capsule)
+                        .fontColor(0xFFFFFF)
+                        .padding(5)
+                        .align(Alignment.Center)
+                        .margin(5)
+                        .fontSize(13)
+                        .onClick {Router.push(url: "ScrollViewDemo")}
+
+                     Button("Case19 Test").id("Case19")
+                        .height(40)
+                        .width(80.percent)
+                        .shape(ShapeType.Capsule)
+                        .fontColor(0xFFFFFF)
+                        .padding(5)
+                        .align(Alignment.Center)
+                        .margin(5)
+                        .fontSize(13)
+                        .onClick {Router.push(url: "Case19")}
+
+                    Button("Case21 Test").id("Case21")
+                        .height(40)
+                        .width(80.percent)
+                        .shape(ShapeType.Capsule)
+                        .fontColor(0xFFFFFF)
+                        .padding(5)
+                        .align(Alignment.Center)
+                        .margin(5)
+                        .fontSize(13)
+                        .onClick {Router.push(url: "Case21")}
                 }
                 .width(100.percent)
             }

@@ -1,12 +1,26 @@
 {
   "app": {
-    "signingConfigs": [],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\LiuTing\\.ohos\\config\\default_overscroll_EjMd1_pUUYHRByqizm5Kpl1MHhpJyYMHqQEVtbPcBtE=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001A3F42BE48044AB04AC2CF4ABEDFBB9803A66C78806F59A0B61196FDB433A68BAC99B7EC8AA02E",
+          "profile": "C:\\Users\\LiuTing\\.ohos\\config\\default_overscroll_EjMd1_pUUYHRByqizm5Kpl1MHhpJyYMHqQEVtbPcBtE=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\LiuTing\\.ohos\\config\\default_overscroll_EjMd1_pUUYHRByqizm5Kpl1MHhpJyYMHqQEVtbPcBtE=.p12",
+          "storePassword": "0000001A9239569C49C62B83CBA56C1F3EE5B1531801E8847827F106BFEDD4C28C12F18C6EB4E7CD852D"
+        }
+      }
+    ],
     "products": [
       {
         "name": "default",
         "signingConfig": "default",
-        "targetSdkVersion": "5.1.0(18)",
-        "compatibleSdkVersion": "5.1.0(18)",
+        "targetSdkVersion": "5.1.1(19)",
+        "compatibleSdkVersion": "5.1.1(19)",
         "runtimeOS": "HarmonyOS",
         "buildOption": {
           "strictMode": {
