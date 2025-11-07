@@ -148,7 +148,8 @@
 ## 约束与限制
 在下述版本验证通过：
 
-    Cangjie Version: 1.0.0
+    Cangjie Version: 1.0.3
+    DevEco Studio 5.1.1 Release (5.1.1.840)
 
 ## 开源协议
 本项目基于 [Apache License 2.0](./LICENSE) ，请自由地享受和参与开源。
