@@ -72,9 +72,8 @@ class ListViewDemo {
 
     func build() {
         Column(){
-            Button().width(90.percent).height(40).onClick({
-                event =>
-                    checkResult()
+            Button("test").width(90.percent).height(40).id("test").onClick({ event =>
+                checkoutResult()
             })
             Stack(Alignment.TopStart) {
                 Flex(
@@ -117,7 +116,7 @@ class ListViewDemo {
         }.width(100.percent).height(100.percent)
     }
 
-    func checkResult(): Unit {
+    func checkoutResult(): Unit {
         var mHeight = model.getHeight().value
         var mWidth = model.getWidth().value
         var mMargin = model.getMargin()

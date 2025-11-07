@@ -13,6 +13,7 @@ import std.sync.*
 import std.time.*
 import overscrolldecor.*
 import ohos.resource_manager.__GenerateResource__
+import ohos.hilog.Hilog
 
 @Entry
 @Component
@@ -31,7 +32,7 @@ public class ViewPagerDemo {
     private var itemIndex: Int64 = 0
 
     protected override func aboutToAppear(): Unit {
-        this.model.setWidth(100.percent).setHeight(92.percent)
+        this.model.setWidth(99.percent).setHeight(92.percent)
     }
 
     @Builder
@@ -82,37 +83,51 @@ public class ViewPagerDemo {
     }
 
     func build() {
-        Stack(Alignment.TopStart) {
-            Flex(
-                FlexParams(direction: FlexDirection.Column, alignItems: ItemAlign.Center,
-                justifyContent: FlexAlign.Center)) {
-                Row() {
-                    Image(@r(app.media.ic_more)).objectFit(ImageFit.Contain).width(10.percent).height(65.percent).margin(
-                        left: 16, right: 20).onClick({
-                        evt =>
-                        this.isVisibility = Visibility.Visible
-                    })
-                    Text("ViewPager Over-Scroll Demo").fontSize(38).maxLines(1).fontColor(Color.WHITE).textOverflow(
-                        TextOverflow.Ellipsis).width(80.percent)
-                }.width(100.percent).height(8.percent).backgroundColor(0Xffffbb33)
+        Column(){
+            Button("test").width(90.percent).height(40).id("test").onClick({ event =>
+                checkoutResult()
+            })
+            Stack(Alignment.TopStart) {
+                Flex(
+                    FlexParams(direction: FlexDirection.Column, alignItems: ItemAlign.Center,
+                    justifyContent: FlexAlign.Center)) {
+                    Row() {
+                        Image(@r(app.media.ic_more)).objectFit(ImageFit.Contain).width(10.percent).height(65.percent).margin(
+                            left: 16, right: 20).onClick({
+                            evt =>
+                            this.isVisibility = Visibility.Visible
+                        })
+                        Text("ViewPager Over-Scroll Demo").fontSize(38).maxLines(1).fontColor(Color.WHITE).textOverflow(
+                            TextOverflow.Ellipsis).width(80.percent)
+                    }.width(100.percent).height(8.percent).backgroundColor(0Xffffbb33)
 
-                ViewPagerOverScroll(model: this.model, child: this.specificChild)
+                    ViewPagerOverScroll(model: this.model, child: this.specificChild)
+                }
+
+                Stack(Alignment.TopStart) {
+                    Flex() {
+
+                    }.width(100.percent).height(100.percent).backgroundColor(Color.BLACK).opacity(0.5 + this.backOffset * 0.3
+                    ).onClick({
+                            evt =>
+
+                            this.isVisibility = Visibility.Visible
+                    })
+
+                    Flex() {
+                        SideBar()
+                    }.offset(x: this.backOffset * 500.0, y: 0.0)
+                }.width(100.percent).height(100.percent).visibility(this.isVisibility)
             }
 
-            Stack(Alignment.TopStart) {
-                Flex() {
+        }.width(100.percent).height(100.percent)
+    }
 
-                }.width(100.percent).height(100.percent).backgroundColor(Color.BLACK).opacity(0.5 + this.backOffset * 0.3
-                ).onClick({
-                        evt =>
+    func checkoutResult(): Unit {
+        var mHeight = model.getHeight().value
+        var mWidth = model.getWidth().value
 
-                        this.isVisibility = Visibility.Visible
-                })
-
-                Flex() {
-                    SideBar()
-                }.offset(x: this.backOffset * 500.0, y: 0.0)
-            }.width(100.percent).height(100.percent).visibility(this.isVisibility)
-        }
+        Hilog.error(333, "test", "getHeight------------>${mHeight == 0.92}")
+        Hilog.error(333, "test", "getWidth------------>${mWidth == 0.99}")
     }
 }
