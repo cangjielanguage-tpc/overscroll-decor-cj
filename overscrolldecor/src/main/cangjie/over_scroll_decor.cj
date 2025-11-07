@@ -1,5 +1,5 @@
 /*
- * @Copyright (c) Huawei Technologies Co., Ltd. 2024-2024. All rights reserved.
+ * @Copyright (c) Huawei Technologies Co., Ltd. 2024-2025. All rights reserved.
  */
 
 package overscrolldecor
@@ -32,7 +32,11 @@ public class OverScrollDecor {
                             BarState.Off
                         }
                     }())
-                        //.edgeEffect(this.model.mOverScrollBounceEffect ? EdgeEffect.Spring : EdgeEffect.None)
+                        .edgeEffect(if (this.model.mOverScrollBounceEffect) {
+                            EdgeEffect.Spring
+                        } else {
+                            EdgeEffect.None
+                        })
                         .onScrollEdge(
                         {
                         side => match (side) {
@@ -90,7 +94,11 @@ public class OverScrollDecor {
                             BarState.Off
                         }
                     }())
-                        //.edgeEffect(this.model.mOverScrollBounceEffect ? EdgeEffect.Spring : EdgeEffect.None)
+                        .edgeEffect(if (this.model.mOverScrollBounceEffect) {
+                            EdgeEffect.Spring
+                        } else {
+                            EdgeEffect.None
+                        })
                     .onScrollEdge(
                     {
                     side => match (side) {

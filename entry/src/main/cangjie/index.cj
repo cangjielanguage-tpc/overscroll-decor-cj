@@ -50,7 +50,7 @@ public class EntryView {
                         .align(Alignment.Center)
                         .margin(5)
                         .fontSize(13)
-                        .onClick {Router.push(url: "InitTest")}
+                        .onClick {Router.push(url: "ListViewDemo")}
                 }
                 .width(100.percent)
             }

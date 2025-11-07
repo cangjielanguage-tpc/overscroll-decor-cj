@@ -5,6 +5,8 @@
   "main": "",
   "author": "",
   "license": "",
-  "dependencies": {}
+  "dependencies": {
+    "overscrolldecor": "file:../overscrolldecor"
+  }
 }
 
