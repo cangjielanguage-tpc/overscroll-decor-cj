@@ -191,11 +191,6 @@ public class OverScrollDecor {
     var model: OverScrollDecorModel		// 滚动容器对象Model
     @BuilderParam
     let child: () -> Unit				// 布局样式
-
-    private var scroller: Scroller = Scroller()
-    private var endOffsetY: Float64 = 0.0
-    private var endOffsetX: Float64 = 0.0
-    private var isBounceEffect = true
 	...
 }
 ```
