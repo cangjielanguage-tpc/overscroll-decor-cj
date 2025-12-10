@@ -42,11 +42,11 @@
 1. 通过 module 引入
     1. 克隆下载项目
     2. 将 overScrollDecor4cj 模块拷贝到应用项目下
-    3. 修改自身应用 entry/src/main/cangjie 下的 cjpm.toml 文件，在 [dependencies] 字段下添加 dependencies.overscrolldecor ,再添加path = "../../../../overscrolldecor/src/main/cangjie"
+    3. 修改自身应用 entry 下的 cjpm.toml 文件，在 [dependencies] 字段下添加 dependencies.overscrolldecor ,再添加path = "../overscrolldecor"
        ```toml
        [dependencies]
-          [dependencies.overscrolldecor]
-             path = "../../../../overscrolldecor/src/main/cangjie"
+           [dependencies.overscrolldecor]
+               path = "../overscrolldecor"
        ```
     4. 在项目中使用 import overscrolldecor.* 引用 overScrollDecor4cj
        ```cangjie
@@ -61,11 +61,11 @@
     > cd third-party
     > git submodule add "https://gitcode.com/Cangjie-TPC/overScrollDecor4cj.git"
     ```
-    2. 修改自身应用 entry/src/main/cangjie 下的 cjpm.toml 文件，添加依赖
+    2. 修改自身应用 entry 下的 cjpm.toml 文件，添加依赖
     ```toml
    [dependencies]
       [dependencies.overscrolldecor]
-         path = "../../../../overscrolldecor/src/main/cangjie"    
+         path = "../third-party/overscrolldecor"
    ```
     3. 在项目中使用 overScrollDecor4cj 组件
        ```cangjie

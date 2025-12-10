@@ -24,89 +24,95 @@ public class OverScrollDecor {
                 Flex(FlexParams(alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center)) {
                     Scroll(this.scroller) {
                         this.child()
-                    }.margin(this.model.mMargin).scrollable(ScrollDirection.Vertical).scrollBar(BarState.Auto).scrollBar(
-                        {
-                        => if (this.model.mScrollBar) {
-                            BarState.Auto
-                        } else {
-                            BarState.Off
-                        }
-                    }())
+                    }
+                        .margin(this.model.mMargin)
                         .edgeEffect(if (this.model.mOverScrollBounceEffect) {
                             EdgeEffect.Spring
                         } else {
                             EdgeEffect.None
                         })
-                        .onScrollEdge(
-                        {
-                        side => match (side) {
-                            case Edge.Bottom => this.endOffsetY = this.scroller.currentOffset().yOffset
-                            case _ => ()
-                        }
-                    }).onScroll(
-                        {
-                            offset =>
-                            this.model.mOffsetY = this.scroller.currentOffset().yOffset
-                            if (this.model.mOffsetY < 0.0) {
-                                this.model.mOffsetY = -floor(this.model.mOffsetY)
-                                if (this.isBounceEffect) {
-                                    this.model.mTextColor = this.model.mDragColorTop
-                                } else {
-                                    this.model.mTextColor = this.model.mBounceBackColorTop
-                                }
-                                if (this.model.mOffsetY == 1.0) {
-                                    this.scroller.scrollTo(xOffset: 0, yOffset: 0)
-                                }
-                            } else if (this.model.mOffsetY > this.endOffsetY && this.endOffsetY != 0.0) {
-                                this.model.mOffsetY = floor(this.endOffsetY - this.model.mOffsetY)
-                                if (this.isBounceEffect) {
-                                    this.model.mTextColor = this.model.mDragColorBottom
-                                } else {
-                                    this.model.mTextColor = this.model.mBounceBackColorBottom
-                                }
+                        .scrollable(ScrollDirection.Vertical)
+                        .scrollBar(
+                            {
+                            => if (this.model.mScrollBar) {
+                                BarState.Auto
                             } else {
-                                this.model.mOffsetY = 0.0
-                                this.model.mTextColor = this.model.mClearColor
+                                BarState.Off
                             }
-                        }
-                    ).onTouch(
-                        {
-                        event => match (event.eventType) {
-                            case TouchType.Down => this.isBounceEffect = true
-                            case TouchType.Up => this.isBounceEffect = false
-                            case _ => return
-                        }
-                    }).onAppear({ =>
-                        let offsetY = this.model.getOffsetY()
-                        this.scroller.scrollTo(xOffset: 0.0, yOffset: offsetY)
-                        this.model.setOffsetY(offsetY)
-                    })
+                        }())
+                        .onScrollEdge({
+                            side => match (side) {
+                                case Edge.Bottom => this.endOffsetY = this.scroller.currentOffset().yOffset
+                                case _ => ()
+                            }
+                        })
+                        .onScroll(
+                            {
+                                offset =>
+                                this.model.mOffsetY = this.scroller.currentOffset().yOffset
+                                if (this.model.mOffsetY < 0.0) {
+                                    this.model.mOffsetY = -floor(this.model.mOffsetY)
+                                    if (this.isBounceEffect) {
+                                        this.model.mTextColor = this.model.mDragColorTop
+                                    } else {
+                                        this.model.mTextColor = this.model.mBounceBackColorTop
+                                    }
+                                    if (this.model.mOffsetY == 1.0) {
+                                        this.scroller.scrollTo(xOffset: 0, yOffset: 0)
+                                    }
+                                } else if (this.model.mOffsetY > this.endOffsetY && this.endOffsetY != 0.0) {
+                                    this.model.mOffsetY = floor(this.endOffsetY - this.model.mOffsetY)
+                                    if (this.isBounceEffect) {
+                                        this.model.mTextColor = this.model.mDragColorBottom
+                                    } else {
+                                        this.model.mTextColor = this.model.mBounceBackColorBottom
+                                    }
+                                } else {
+                                    this.model.mOffsetY = 0.0
+                                    this.model.mTextColor = this.model.mClearColor
+                                }
+                            }
+                        )
+                        .onTouch({
+                            event => match (event.eventType) {
+                                case TouchType.Down => this.isBounceEffect = true
+                                case TouchType.Up => this.isBounceEffect = false
+                                case _ => return
+                            }
+                        })
+                        .onAppear({ =>
+                            let offsetY = this.model.getOffsetY()
+                            this.scroller.scrollTo(xOffset: 0.0, yOffset: offsetY)
+                            this.model.setOffsetY(offsetY)
+                        })
                 }.height(this.model.mHeight).width(this.model.mWidth)
+
             } else if (this.model.mOrientation == ORIENTATION.HORIZONTAL) {
                 Flex(FlexParams(alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center)) {
                     Scroll(this.scroller) {
                         this.child()
-                    }.margin(this.model.mMargin).scrollable(ScrollDirection.Horizontal).scrollBar(BarState.Auto).scrollBar(
-                        {
-                        => if (this.model.mScrollBar) {
-                            BarState.Auto
-                        } else {
-                            BarState.Off
-                        }
-                    }())
+                    }
+                        .margin(this.model.mMargin)
+                        .scrollable(ScrollDirection.Horizontal)
+                        .scrollBar({
+                            => if (this.model.mScrollBar) {
+                                BarState.Auto
+                            } else {
+                                BarState.Off
+                            }
+                        }())
                         .edgeEffect(if (this.model.mOverScrollBounceEffect) {
                             EdgeEffect.Spring
                         } else {
                             EdgeEffect.None
                         })
-                    .onScrollEdge(
-                    {
-                    side => match (side) {
-                        case Edge.End => this.endOffsetX = this.scroller.currentOffset().xOffset //BASELINE
-                        case _ => ()
-                    }
-                }).onScroll(
-                        {
+                        .onScrollEdge({
+                            side => match (side) {
+                                case Edge.End => this.endOffsetX = this.scroller.currentOffset().xOffset //BASELINE
+                                case _ => ()
+                            }
+                        })
+                        .onScroll({
                             offset =>
                             this.model.mOffsetX = this.scroller.currentOffset().xOffset
                             if (this.model.mOffsetX < 0.0) {
@@ -130,20 +136,19 @@ public class OverScrollDecor {
                                 this.model.mOffsetX = 0.0
                                 this.model.mTextColor = this.model.mClearColor
                             }
-                        }
-                    ).onTouch(
-                        {
-                        event => match (event.eventType) {
-                            case TouchType.Down => this.isBounceEffect = true
-                            case TouchType.Up => this.isBounceEffect = false
-                            case _ => return
-                        }
-                    }).onAppear({ =>
-                        let offsetX = this.model.getOffsetX()
-                        this.scroller.scrollTo(xOffset: offsetX, yOffset: 0.0)
-                        this.model.setOffsetX(offsetX)
-
-                    })
+                        })
+                        .onTouch({
+                            event => match (event.eventType) {
+                                case TouchType.Down => this.isBounceEffect = true
+                                case TouchType.Up => this.isBounceEffect = false
+                                case _ => return
+                            }
+                        })
+                        .onAppear({ =>
+                            let offsetX = this.model.getOffsetX()
+                            this.scroller.scrollTo(xOffset: offsetX, yOffset: 0.0)
+                            this.model.setOffsetX(offsetX)
+                        })
                 }.height(this.model.mHeight).width(this.model.mWidth)
              }
         } else {
