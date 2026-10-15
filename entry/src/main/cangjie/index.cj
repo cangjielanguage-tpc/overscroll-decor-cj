@@ -1,7 +1,3 @@
-/*
- * @Copyright (c) Huawei Technologies Co., Ltd. 2024-2024. All rights reserved.
- */
-
 package ohos_app_cangjie_entry
 
 import ohos.base.*
@@ -12,8 +8,8 @@ import ohos.prompt_action.PromptAction
 import ohos.router.Router
 import std.math.floor
 import std.convert.Parsable
-import std.sync.{Timer, sleep}
-import std.time.{Duration, MonoTime}
+import std.sync.*
+import std.time.*
 import overscrolldecor.*
 
 @Entry
@@ -50,7 +46,7 @@ public class EntryView {
                         .align(Alignment.Center)
                         .margin(5)
                         .fontSize(13)
-                        .onClick {Router.push(url: "InitTest")}
+                        .onClick({e => Router.push(url: "GridViewDemo")})
                 }
                 .width(100.percent)
             }

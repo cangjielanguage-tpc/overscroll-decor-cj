@@ -1,6 +1,3 @@
-/**
- * Created on 2025/2/19
- */
 package ohos_app_cangjie_entry
 
 import ohos.base.*
@@ -11,15 +8,15 @@ import ohos.prompt_action.PromptAction
 import ohos.router.Router
 import std.math.floor
 import std.convert.Parsable
-import std.sync.{Timer, sleep}
-import std.time.{Duration, MonoTime}
+import std.sync.*
+import std.time.*
 import overscrolldecor.*
 
 @Entry
 @Component
-class Case21 {
-    var caseNameBase: String = "Case21_setOffsetY_01"
-    var caseNameDetail: String = "(100.00）"
+class Case19 {
+    var caseNameBase: String = "Case19_setOffsetX_02"
+    var caseNameDetail: String = "正常值（100.00）"
     var curValue=100.00
 
     @State
@@ -36,7 +33,7 @@ class Case21 {
 
     protected override func aboutToAppear(): Unit {
         this.horizontalView.setUpOverScroll(true).setOrientation(ORIENTATION.HORIZONTAL).setOverScrollBounceEffect(
-            true).setScrollBar(true).setWidth(100.percent).setHeight(24.percent).setOffsetY(curValue)
+            true).setScrollBar(true).setWidth(100.percent).setHeight(24.percent).setOffsetX(curValue)
     }
 
     @Builder
@@ -65,7 +62,7 @@ class Case21 {
                 Text(caseNameDetail).width(100.percent).fontSize(20)
             }
             Row(){
-                Text("getOffsetY = ${this.horizontalView.getOffsetY()}").width(100.percent).fontSize(20)
+                Text("getOffsetX = ${this.horizontalView.getOffsetX()}").width(100.percent).fontSize(20)
             }
             Stack(Alignment.TopStart) {
                 Flex(
