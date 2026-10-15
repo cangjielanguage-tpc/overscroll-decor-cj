@@ -1,7 +1,3 @@
-/*
- * @Copyright (c) Huawei Technologies Co., Ltd. 2024-2024. All rights reserved.
- */
-
 package ohos_app_cangjie_entry
 
 import ohos.base.*
@@ -10,6 +6,7 @@ import ohos.state_manage.*
 import ohos.state_macro_manage.*
 import ohos.prompt_action.PromptAction
 import overscrolldecor.*
+import ohos.resource_manager.__GenerateResource__
 
 @Entry
 @Component
